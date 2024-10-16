@@ -133,7 +133,7 @@ body, html {
     color: #000;
 }
 
-.header h2.instruction {
+.header h2 {
     color: lightslategrey;
     font-size: 20px;
     margin-left: 50px;
