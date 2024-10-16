@@ -6,7 +6,7 @@ body, html {
 }
 
 .min-h-screen {
-    min-height: 90vh;
+    min-height: 89.5vh;
 }
 
 .flex {
@@ -71,7 +71,6 @@ body, html {
     bottom: 60px;
     left: 50px;
     font-weight: 500;
-    /* font-family: "Inter",sans-serif; */
 }
 
 .color-name {
@@ -121,12 +120,22 @@ body, html {
 
 .header {
     background-color: #f8f9fa;
-    padding: 15px 30px;
+    padding: 10px 20px;
     border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    max-height: 8vh;
 }
 
 .header h1 {
     margin: 0;
     font-size: 32px;
     color: #000;
+}
+
+.header h2.instruction {
+    color: lightslategrey;
+    font-size: 20px;
+    margin-left: 50px;
+    font-weight: 500;
 }
