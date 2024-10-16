@@ -19,7 +19,7 @@ function hslToHex({ h, s, l }) {
         const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
         return Math.round(255 * color).toString(16).padStart(2, '0');
     };
-    return `#${f(0)}${f(8)}${f(4)}`.toUpperCase(); // Convert to uppercase
+    return `#${f(0)}${f(8)}${f(4)}`.toUpperCase();
 }
 
 function getContrastColor(h, s, l) {
@@ -37,7 +37,7 @@ function createColorBlock(color, index) {
 
     const lockIcon = lockedColors[index] ? 
         `<i class="fas fa-lock" style="color: ${contrastColor};"></i>` : 
-        `<i class="fas fa-unlock" style="color: ${contrastColor};"></i>`; // Font Awesome icons
+        `<i class="fas fa-unlock" style="color: ${contrastColor};"></i>`;
 
     colorBlock.innerHTML = `
         <div class="color-content">
@@ -58,7 +58,7 @@ function createColorBlock(color, index) {
 
     colorBlock.querySelector('.delete-btn').addEventListener('click', () => deleteColor(index));
     colorBlock.querySelector('.lock-btn').addEventListener('click', () => toggleLock(index));
-    colorBlock.querySelector('.copy-btn').addEventListener('click', () => copyToClipboard(hexColor)); // Add copy functionality
+    colorBlock.querySelector('.copy-btn').addEventListener('click', () => copyToClipboard(hexColor));
 
     return colorBlock;
 }
