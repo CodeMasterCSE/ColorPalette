@@ -9,10 +9,34 @@
 </head>
 <body>
     <header class="header">
-        <h1>ColorPalette</h1>
+        <h1 class="site-title">ColorPalette</h1>
         <h2 class="instruction">Press Spacebar to generate palette</h2>
+        <button id="download-palette" class="download-btn">
+            <i class="fas fa-download"></i> Download Palette
+        </button>
     </header>
     <div id="color-palette" class="min-h-screen flex relative"></div>
+    <div id="download-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Download Palette</h2>
+            <p>Select a format:</p>
+            <div class="download-options">
+                <button class="download-option" data-format="png">
+                    <i class="fas fa-file-image icon"></i>
+                    <span>PNG</span>
+                </button>
+                <button class="download-option" data-format="jpg">
+                    <i class="fas fa-file-image icon"></i>
+                    <span>JPG</span>
+                </button>
+                <button class="download-option" data-format="pdf">
+                    <i class="fas fa-file-pdf icon"></i>
+                    <span>PDF</span>
+                </button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
