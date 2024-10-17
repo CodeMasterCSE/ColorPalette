@@ -69,6 +69,7 @@ function renderColors() {
         const colorBlock = createColorBlock(color, index);
         colorPalette.appendChild(colorBlock);
     });
+    handleResponsiveLayout(); // Add this line
 }
 
 function generateNewColors() {
@@ -106,3 +107,38 @@ document.addEventListener('keydown', (event) => {
 function copyToClipboard(hexColor) {
     navigator.clipboard.writeText(hexColor);
 }
+
+document.getElementById('download-palette').addEventListener('click', openDownloadDialog);
+document.querySelector('.close-button').addEventListener('click', closeDownloadDialog);
+document.querySelectorAll('.download-option').forEach(button => {
+    button.addEventListener('click', function() {
+        const format = this.getAttribute('data-format');
+        closeDownloadDialog();
+    });
+});
+
+function openDownloadDialog() {
+    document.getElementById('download-dialog').style.display = 'block';
+}
+
+function closeDownloadDialog() {
+    document.getElementById('download-dialog').style.display = 'none';
+}
+
+function handleResponsiveLayout() {
+    const colorBlocks = document.querySelectorAll('.color-block');
+    if (window.innerWidth <= 768) {
+        const availableHeight = window.innerHeight - 50;
+        const blockHeight = availableHeight / colors.length;
+        colorBlocks.forEach(block => {
+            block.style.height = `${blockHeight}px`;
+        });
+    } else {
+        colorBlocks.forEach(block => {
+            block.style.height = 'auto';
+        });
+    }
+}
+
+window.addEventListener('resize', handleResponsiveLayout);
+handleResponsiveLayout();
