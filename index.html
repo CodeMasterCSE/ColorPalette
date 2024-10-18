@@ -11,11 +11,21 @@
     <header class="header">
         <h1 class="site-title">ColorPalette</h1>
         <h2 class="instruction">Press Spacebar to generate palette</h2>
-        <button id="download-palette" class="download-btn">
-            <i class="fas fa-download"></i> Download Palette
-        </button>
+        <div class="header-buttons">
+            <button id="view-palette" class="view-btn">
+                <i class="fas fa-eye"></i> View Palette
+            </button>
+            <button id="download-palette" class="download-btn">
+                <i class="fas fa-download"></i> Download Palette
+            </button>
+        </div>
     </header>
     <div id="color-palette" class="min-h-screen flex relative"></div>
+    <footer class="footer">
+        <button id="generate-btn" class="generate-btn">
+            <i class="fas fa-sync-alt"></i> Generate
+        </button>
+    </footer>
     <div id="download-dialog" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
@@ -35,6 +45,17 @@
                     <span>PDF</span>
                 </button>
             </div>
+        </div>
+    </div>
+    <div id="view-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Color Palette Details</h2>
+            <div id="selected-color" class="selected-color">
+                <div class="color-preview" id="color-preview"></div>
+                <p id="color-details"></p>
+            </div>
+            <div id="palette-details" class="palette-details"></div>
         </div>
     </div>
     <script src="script.js"></script>
